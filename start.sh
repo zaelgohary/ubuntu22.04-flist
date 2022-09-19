@@ -1,6 +1,9 @@
-mkdir -p ~/.ssh
+#!/bin/bash
+
 mkdir -p /var/run/sshd
-echo $SSH_KEY >> ~/.ssh/authorized_keys
+mkdir -p /root/.ssh/ 
+chmod 600 ~/.ssh
+chmod 600 /etc/ssh/*
+echo $SSH_KEY > /root/.ssh/authorized_keys
 chmod 600 ~/.ssh/authorized_keys
-exec /usr/sbin/sshd -D
-zinit init
+/usr/sbin/sshd

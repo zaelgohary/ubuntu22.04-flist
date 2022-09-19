@@ -6,8 +6,7 @@ RUN apt update && \
 RUN wget -O /sbin/zinit https://github.com/threefoldtech/zinit/releases/download/v0.2.5/zinit && \
   chmod +x /sbin/zinit
 
-RUN mkdir -p /etc/zinit
-COPY zinit /etc/zinit
+COPY zinit /
 COPY start.sh /start.sh
 
 RUN chmod +x /sbin/zinit && chmod +x /start.sh
